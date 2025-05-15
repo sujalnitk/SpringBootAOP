@@ -11,8 +11,11 @@ public class Api {
     private UserService userService;
 
     @GetMapping("/")
-    public String userLogin() {
+    public String userLogin() throws Exception {
         userService.logIn();
+
+        userService.logOut();
+
         return "User login endpoint called succesfully";
     }
 
